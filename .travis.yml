@@ -12,6 +12,22 @@ matrix:
       python: pypy3
     - dist: xenial
       python: 3.7
+    - os: linux
+      arch: arm64
+      python: 3.6
+    - os: linux
+      arch: arm64
+      dist: bionic
+      python: 3.8
+    - os: linux
+      arch: arm64
+      dist: xenial
+      python: 3.8
+    - os: linux
+      arch: arm64
+      python: 3.8  
+    - dist: xenial
+      python: 3.7
     - os: osx
       language: generic
     - os: windows
