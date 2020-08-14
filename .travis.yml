@@ -52,9 +52,9 @@ install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew pin numpy gdal postgis; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew upgrade python; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install cairo gdk-pixbuf; fi
-  - if [[ "${TRAVIS_CPU_ARCH}" == "arm64" ]]; then apt-get install xvfb; fi
+  
   - $PYTHON -m pip install --upgrade setuptools
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then $PYTHON -m pip install -e .[test,xcb]; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then apt-get install -y xvfb; $PYTHON -m pip install -e .[test,xcb]; fi
   - if [[ "$TRAVIS_OS_NAME" != "linux" ]]; then $PYTHON -m pip install -e .[test]; fi
 
 script:
